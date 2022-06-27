@@ -166,7 +166,7 @@ function Register-Gateway([string] $instanceKey)
 }
 
 
-
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 Trace-Log "Log file: $logLoc"
 $uri = "https://go.microsoft.com/fwlink/?linkid=839822"
 Trace-Log "Gateway download fw link: $uri"
